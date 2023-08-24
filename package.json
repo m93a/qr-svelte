@@ -29,6 +29,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"qr-scanner": "^1.4.2"
+		"@types/qrcode": "^1.5.1",
+		"qr-scanner": "^1.4.2",
+		"qrcode": "^1.5.3"
 	}
 }
