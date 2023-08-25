@@ -1,6 +1,6 @@
 {
 	"name": "qr-svelte",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": false,
 	"default": "./dist/index.js",
 	"exports": {

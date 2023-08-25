@@ -39,7 +39,7 @@
 	};
 
 	const configChanged = () => {
-    scanner?.destroy();
+		scanner?.destroy();
 		scanner = new QrScanner(video, onDecode, {
 			overlay,
 			maxScansPerSecond,
@@ -48,6 +48,7 @@
 			returnDetailedScanResult: true,
 			onDecodeError: onError,
 		});
+		if (scanning) scanner?.start();
 	};
 
 	let mounted = false;
@@ -55,10 +56,10 @@
 		configChanged();
 		mounted = true;
 	});
-  onDestroy(() => {
-    scanner?.destroy();
-    scanner = undefined;
-  });
+	onDestroy(() => {
+		scanner?.destroy();
+		scanner = undefined;
+	});
 
 	/**
 	 * Set it whenever you're ready to scan, for example on a button click or directly on page load. It will prompt
@@ -121,7 +122,7 @@
 	})();
 	$: scanner?.setInversionMode(_inversionMode);
 
-  // TODO add support for color correction and flashlight
+	// TODO add support for color correction and flashlight
 </script>
 
 <div class="qr">
